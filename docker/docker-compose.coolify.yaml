@@ -461,7 +461,7 @@ services:
   nginx:
     cpu_shares: 128
     cpuset: "8-11"
-    image: nginx:1.29-alpine
+    image: nginx:1.29
     restart: always
     environment:
       # Coolify: attach the public domain to this service on port 80.
