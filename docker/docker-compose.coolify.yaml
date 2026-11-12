@@ -391,7 +391,7 @@ services:
       DIFY_AGENT_LOCAL_SANDBOX_AUTH_TOKEN: ${SERVICE_HEX_32_SHELLCTL}
       DIFY_AGENT_SANDBOX_FILES_BASE_URL: http://api:5001
       DIFY_AGENT_STUB_API_BASE_URL: http://agent_backend:5050/agent-stub
-      DIFY_AGENT_SERVER_SECRET_KEY: ${SERVICE_REALBASE64_32_AGENTSERVER}
+      DIFY_AGENT_SERVER_SECRET_KEY: ${DIFY_AGENT_SERVER_SECRET_KEY:?}
     depends_on:
       redis:
         condition: service_started
