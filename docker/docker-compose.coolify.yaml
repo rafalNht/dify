@@ -7,7 +7,7 @@
 #   *.defaults files would be ignored. Their values are inlined below.
 # - Only the services we run are kept (core + postgresql + weaviate), no profiles.
 # - No host ports: the domain is attached to the nginx service in Coolify.
-# - Per-service resource limits (~12g memory total), cpu_shares 128, pinned to cores 8-11.
+# - Per-service resource limits (~13g memory total), cpu_shares 128, pinned to cores 8-11.
 #
 # Coolify settings this file needs:
 # - Base Directory: /docker
@@ -173,7 +173,7 @@ services:
       disable: true
     deploy:
       resources:
-        limits: { cpus: "0.25", memory: 384m }
+        limits: { cpus: "0.25", memory: 1g }
         reservations: { memory: 128m }
 
   web:
@@ -293,7 +293,7 @@ services:
       - ssrf_proxy_network
     deploy:
       resources:
-        limits: { cpus: "0.5", memory: 512m }
+        limits: { cpus: "0.5", memory: 1g }
         reservations: { memory: 128m }
 
   local_sandbox:
